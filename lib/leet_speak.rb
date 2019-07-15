@@ -2,14 +2,17 @@ require ('pry')
 
 class String
   def leet_speak
-    split_string = self.split("")
-    split_string.each do |word|
+    words = self.split(" ")
+    words.each() do |word|
+      word.length.times do |i|
+        if word[i] === "e"
+          word[i] = "3"
+        end
+      end
     end
-    puts split_string.join(",")
-    split_string.join(",")
+    words.join(" ")
   end
 end
-
-puts "Please enter phrase:"
-input = gets.to_str
-input.leet_speak
+  puts "Please enter phrase:"
+  input = gets.chomp()
+  puts input.leet_speak()
